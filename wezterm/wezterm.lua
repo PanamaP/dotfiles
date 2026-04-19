@@ -28,6 +28,18 @@ config.window_background_gradient = {
   },
 }
 
+wezterm.on("user-var-changed", function(window, name, value)
+  if name == "NVIM" then
+    local overrides = window:get_config_overrides() or {}
+    if value == "1" then
+      overrides.window_padding = { left = 0, right = 0, top = 0, bottom = 0 }
+    else
+      overrides.window_padding = { left = 10, right = 10, top = 10, bottom = 10 }
+    end
+    window:set_config_overrides(overrides)
+  end
+end)
+
 config.window_close_confirmation = "NeverPrompt"
 
 config.leader = { key = "Space", mods = "CTRL", timeout_milliseconds = 1000 }

@@ -11,11 +11,18 @@ return {
   },
   {
     "nvim-treesitter/nvim-treesitter",
+    branch = "master", -- nvim 0.11 backwards compatibility
     opts = {
       ensure_installed = {
         "hyprlang", "vim", "lua", "vimdoc",
-        "html", "css", "c_sharp", "razor",
+        "html", "css", "c_sharp", "razor", "rust", "toml"
       },
+      highlight = {
+        enable = true,
+      },
+      indent = {
+        enable = true,
+      }
     },
   },
   {
