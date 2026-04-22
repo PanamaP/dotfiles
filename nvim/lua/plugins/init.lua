@@ -42,6 +42,7 @@ return {
   },
   {
     "seblyng/roslyn.nvim",
+    commit = "f2ec6ee",
     ft = { "cs", "razor" },
     opts = {},
     lazy = false,
