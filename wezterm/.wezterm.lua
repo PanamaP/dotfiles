@@ -16,7 +16,11 @@ for i = 1, 9 do
   })
 end
 
-config.default_prog = { "nu" }
+if wezterm.target_triple:find("apple%-darwin") then
+  config.default_prog = { "/opt/homebrew/bin/nu" }
+else
+  config.default_prog = { "nu" }
+end
 
 config.color_scheme = "tokyonight"
 
